@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Swagger UI</title>
-    <!-- Load Swagger UI CSS -->
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3/swagger-ui.css">
+    <title>ServiceDesk Service Swagger</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui.css">
+
+
 </head>
 <body>
-    <!-- Swagger UI will be rendered here -->
-    <div id="swagger-ui"></div>
 
-    <!-- Load Swagger UI JavaScript -->
-    <script src="https://unpkg.com/swagger-ui-dist@3/swagger-ui-bundle.js"></script>
+<div id="swagger-ui"></div>
 
-    <script>
-        window.onload = function() {
-            // Begin Swagger UI call region
-            const ui = SwaggerUIBundle({
-                url: "http://localhost:5001/swagger/v1/swagger.json", // URL of your OpenAPI spec file
-                dom_id: '#swagger-ui',
-                deepLinking: true,
-                presets: [
-                    SwaggerUIBundle.presets.apis,
-                    SwaggerUIBundle.SwaggerUIStandalonePreset
-                ],
-                plugins: [
-                    SwaggerUIBundle.plugins.DownloadUrl
-                ],
-                layout: "StandaloneLayout" // Use StandaloneLayout
-            })
-            // End Swagger UI call region
+<script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-standalone-preset.js"></script>
+<script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-bundle.js"></script>
 
-            window.ui = ui
-        }
-    </script>
+<script>
+
+    window.onload = function() {
+        // Build a system
+        const ui = SwaggerUIBundle({
+            url: "<http://localhost:5001/swagger/v1/swagger.json>",
+            dom_id: '#swagger-ui',
+            deepLinking: true,
+            presets: [
+                SwaggerUIBundle.presets.apis,
+                SwaggerUIStandalonePreset
+            ],
+            plugins: [
+                SwaggerUIBundle.plugins.DownloadUrl
+            ],
+            layout: "StandaloneLayout",
+        })
+        window.ui = ui
+    }
+</script>
 </body>
 </html>
