@@ -18,7 +18,7 @@
         window.onload = function() {
             // Begin Swagger UI call region
             const ui = SwaggerUIBundle({
-                url: "swagger.json", // Path to your OpenAPI spec file
+                url: "http://localhost:5001/swagger/v1/swagger.json", // URL of your OpenAPI spec file
                 dom_id: '#swagger-ui',
                 deepLinking: true,
                 presets: [
